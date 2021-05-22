@@ -13,8 +13,9 @@ export class CreateUsers1621706310811 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
-                        name: 'type',
-                        type: 'varchar',
+                        name: 'admin',
+                        type: 'boolean',
+                        default: false,
                     },
                     {
                         name: 'email',

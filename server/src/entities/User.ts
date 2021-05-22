@@ -9,7 +9,7 @@ export class User {
     id: string
 
     @Column()
-    type: string
+    admin: boolean
 
     @Column()
     email: string
