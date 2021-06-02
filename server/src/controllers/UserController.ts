@@ -31,9 +31,9 @@ export class UserController {
 
             const usersBeenDeleted = await userService.delete(id)
 
-            if (usersBeenDeleted) {
+            // if (usersBeenDeleted) {
                 return res.json(usersBeenDeleted)
-            }
+            // }
         } catch (err) {
             return res.status(500).json(err)
         }

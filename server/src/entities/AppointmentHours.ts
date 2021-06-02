@@ -9,7 +9,7 @@ export class AppointmentHours {
     id: string
 
     @Column()
-    isBooked: boolean
+    is_booked: boolean
 
     @CreateDateColumn()
     starts_at: Date
