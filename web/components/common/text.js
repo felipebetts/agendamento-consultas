@@ -1,25 +1,25 @@
 import styled from "styled-components"
 
 
-export const H1 = styled.h1`
+// export const H1 = styled.h1`
 
-`
+// `
 
-export const H2 = styled.h2``
+// export const H2 = styled.h2``
 
-export const H3 = styled.h3`
-    color: ${({ theme }) => theme.colors.text.neutral600 };
-    ${(props) => props.fontSize ? `font-size: ${props.fontSize};` : ''}
-    ${(props) => props.fontWeight ? `font-weight: ${props.fontWeight};` : ''}
-    ${(props) => props.margin ? `margin: ${props.margin};` : ''}
-`
+// export const H3 = styled.h3`
+//     color: ${({ theme }) => theme.colors.text.neutral600 };
+//     ${(props) => props.fontSize ? `font-size: ${props.fontSize};` : ''}
+//     ${(props) => props.fontWeight ? `font-weight: ${props.fontWeight};` : ''}
+//     ${(props) => props.margin ? `margin: ${props.margin};` : ''}
+// `
 
-export const H4 = styled.h4`
+// export const H4 = styled.h4`
 
 
-`
+// `
 
-export const H5 = styled.h5``
+// export const H5 = styled.h5``
 
 export const Parag = styled.p`
 

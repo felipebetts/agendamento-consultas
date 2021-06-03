@@ -1,18 +1,18 @@
 import Card from "../components/common/Card";
-import { Flex } from "../components/common/Containers";
+import { Flex } from "../components/common/containers";
 import { Background, CheckIconContainer, Logo } from "../components/specific/Login/styles";
 import Input from "../components/form/Input";
 import Button from "../components/common/Button";
 
 import { User, EyeClosed, Eye, CheckCircle } from "phosphor-react";
 import { useContext, useEffect, useState } from "react";
-import { H3, Parag } from "../components/common/Text";
+import { Title3, Par, Title3ag } from "../components/common/text";
 import { api } from "../services/apiClient";
 // import { localStorageUserKey } from "../utils/constants";
 // import { UserContext } from "../contexts/UserContext";
 import { useRouter } from "next/router";
 
-const Login = () => {
+const LoginPage = () => {
 
     //   const { user } = useContext(UserContext)
 
@@ -50,54 +50,54 @@ const Login = () => {
 
     const handleSendPasswordRecoveryEmail = () => {
 
-        const reqData = {
-            email: username
-        }
+        // const reqData = {
+        //     email: username
+        // }
 
-        api('post', '/forgot/password', reqData)
-            .then(res => {
-                if (res && res.data) {
-                    setForgotPasswordEmailSent(true)
-                }
-            })
+        // api('post', '/forgot/password', reqData)
+        //     .then(res => {
+        //         if (res && res.data) {
+        //             setForgotPasswordEmailSent(true)
+        //         }
+        //      })
     }
 
 
 
     const handleLogin = () => {
-        const reqData = {
-            grant_type: "password",
-            client_id: 2,
-            client_secret: "CmBRD8aNKGSheOT3T4xnnJtht7xbvhKjgHaMmngc",
-            username: username,
-            password: password,
-            scope: ""
-        }
+        // const reqData = {
+        //     grant_type: "password",
+        //     client_id: 2,
+        //     client_secret: "CmBRD8aNKGSheOT3T4xnnJtht7xbvhKjgHaMmngc",
+        //     username: username,
+        //     password: password,
+        //     scope: ""
+        // }
 
 
-        api('post', '/oauth/token', reqData)
-            .then(res => {
-                if (res && res.data) {
-                    const userInfo = {
-                        uuid: res.data.user.uuid,
-                        type: res.data.user.role.type,
-                        access_token: res.data.data.access_token,
-                        refresh_token: res.data.data.refresh_token,
-                    }
-                    //   localStorage.setItem(localStorageUserKey, JSON.stringify(userInfo))
-                    return res.data
-                }
-            })
-            .then(res => {
-                if (res) {
-                    router.push('/')
-                }
-            })
-            .catch(err => {
-                console.log({ err })
-                setLoginError(true)
-                setLoginErrorMessage('Usuário ou senha incorretos')
-            })
+        // api('post', '/oauth/token', reqData)
+        //     .then(res => {
+        //         if (res && res.data) {
+        //             const userInfo = {
+        //                 uuid: res.data.user.uuid,
+        //                 type: res.data.user.role.type,
+        //                 access_token: res.data.data.access_token,
+        //                 refresh_token: res.data.data.refresh_token,
+        //             }
+        //             //   localStorage.setItem(localStorageUserKey, JSON.stringify(userInfo))
+        //             return res.data
+        //         }
+        //     })
+        //     .then(res => {
+        //         if (res) {
+        //             router.push('/')
+        //         }
+        //     })
+        //     .catch(err => {
+        //         console.log({ err })
+        //         setLoginError(true)
+        //         setLoginErrorMessage('Usuário ou senha incorretos')
+        //     })
     }
 
     if (forgotPasswordEmailSent) {
@@ -109,9 +109,9 @@ const Login = () => {
                             <CheckIconContainer>
                                 <CheckCircle size={120} weight="thin" />
                             </CheckIconContainer>
-                            <H3 fontSize='24px' fontWeight='400'>
+                            <Title3 fontSize='24px' fontWeight='400'>
                                 Confira sua caixa de entrada!
-                </H3>
+                </Title3>
                             <Parag margin='16px 36px 0'>
                                 Enviamos um link para cadastramento de uma nova senha no e-mail informado.
                 </Parag>
@@ -140,9 +140,7 @@ const Login = () => {
                 </Flex>
             </Background>
         )
-    }
-
-    if (forgotPassword) {
+    } else if (forgotPassword) {
         return (
             <Background>
                 <Flex>
@@ -152,9 +150,9 @@ const Login = () => {
                         </Flex>
                         <Flex padding="0 16px 16px" column alignItems="flex-start" textAlign='left'>
                             <Flex width='100%'>
-                                <H3 fontSize='24px' fontWeight='400'>
+                                <Title3 fontSize='24px' fontWeight='400'>
                                     Recuperação de acesso
-                                </H3>
+                                </Title3>
                             </Flex>
                             <Input
                                 id="username"
@@ -183,79 +181,78 @@ const Login = () => {
                 </Flex>
             </Background>
         )
+    } else {
+        return (
+            <Background>
+                <Flex>
+                    <Card width='489px'>
+                        <Flex width='100%'>
+                        <Logo src="/images/logo.png" alt="Logo" />
+    
+                        </Flex>
+                        <Flex padding="0 16px 16px" column alignItems="flex-start">
+                            <Input
+                                id="username"
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
+                                placeholder="Insira seu email cadastrado"
+                                label="Usuário"
+                                Icon={User}
+                                error={loginError}
+                            />
+                            {viewPassword ? (
+                                <Input
+                                    id="password"
+                                    type="text"
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    placeholder="Insira sua senha"
+                                    label="Senha"
+                                    Icon={Eye}
+                                    iconIsButton
+                                    onIconButtonClick={() => setViewPassword(false)}
+                                    error={loginError}
+                                    assistentText={loginErrorMessage}
+                                />
+                            ) : (
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    placeholder="Insira sua senha"
+                                    label="Senha"
+                                    Icon={EyeClosed}
+                                    iconIsButton
+                                    onIconButtonClick={() => setViewPassword(true)}
+                                    error={loginError}
+                                    assistentText={loginErrorMessage}
+                                />
+                            )}
+                            <Button
+                                tertiary
+                                fontSize="14px"
+                                onClick={() => setForgotPassword(true)}
+                            >
+                                Esqueci minha senha
+                </Button>
+                        </Flex>
+                        <Flex column margin="32px 16px 16px">
+                            <Button tertiary fullWidth>
+                                Não possuo cadastro
+                </Button>
+                            <Button
+                                fullWidth
+                                onClick={() => handleLogin()}
+                            >
+                                Acessar
+                </Button>
+                        </Flex>
+                    </Card>
+                </Flex>
+            </Background>
+        );
     }
-
-
-    return (
-        <Background>
-            <Flex>
-                <Card width='489px'>
-                    <Flex width='100%'>
-                    <Logo src="/images/logo.png" alt="Logo" />
-
-                    </Flex>
-                    <Flex padding="0 16px 16px" column alignItems="flex-start">
-                        <Input
-                            id="username"
-                            value={username}
-                            onChange={e => setUsername(e.target.value)}
-                            placeholder="Insira seu email cadastrado"
-                            label="Usuário"
-                            Icon={User}
-                            error={loginError}
-                        />
-                        {viewPassword ? (
-                            <Input
-                                id="password"
-                                type="text"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                placeholder="Insira sua senha"
-                                label="Senha"
-                                Icon={Eye}
-                                iconIsButton
-                                onIconButtonClick={() => setViewPassword(false)}
-                                error={loginError}
-                                assistentText={loginErrorMessage}
-                            />
-                        ) : (
-                            <Input
-                                id="password"
-                                type="password"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                placeholder="Insira sua senha"
-                                label="Senha"
-                                Icon={EyeClosed}
-                                iconIsButton
-                                onIconButtonClick={() => setViewPassword(true)}
-                                error={loginError}
-                                assistentText={loginErrorMessage}
-                            />
-                        )}
-                        <Button
-                            tertiary
-                            fontSize="14px"
-                            onClick={() => setForgotPassword(true)}
-                        >
-                            Esqueci minha senha
-            </Button>
-                    </Flex>
-                    <Flex column margin="32px 16px 16px">
-                        <Button tertiary fullWidth>
-                            Não possuo cadastro
-            </Button>
-                        <Button
-                            fullWidth
-                            onClick={() => handleLogin()}
-                        >
-                            Acessar
-            </Button>
-                    </Flex>
-                </Card>
-            </Flex>
-        </Background>
-    );
 };
 
-export default Login;
+export default LoginPage

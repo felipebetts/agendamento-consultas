@@ -1,4 +1,4 @@
-import { Box } from "../../common/Containers"
+import { Box } from "../../common/containers"
 import { AssistentP, IconButton, InputContainer, StyledInput, StyledLabel } from "./styles"
 import MaskedInput from 'react-text-mask'
 
