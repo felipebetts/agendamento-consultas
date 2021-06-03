@@ -7,6 +7,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 
+height: 100%;
+width: 100%;
+
 min-height: 100vh;
 min-width: 100vw;
 
@@ -16,6 +19,10 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
+
+@media(max-width: 576px) {
+    background: none;
+}
 `
 
 export const PurpleCoat = styled.div`

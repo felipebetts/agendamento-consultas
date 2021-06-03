@@ -103,8 +103,10 @@ const LoginPage = () => {
     if (forgotPasswordEmailSent) {
         return (
             <Background>
-                <Flex>
-                    <Card width='489px'>
+                <Flex
+                    width='100%'
+                    >
+                    <Card login width='489px'>
                         <Flex padding="0 16px 16px" column>
                             <CheckIconContainer>
                                 <CheckCircle size={120} weight="thin" />
@@ -116,7 +118,7 @@ const LoginPage = () => {
                                 Enviamos um link para cadastramento de uma nova senha no e-mail informado.
                 </Parag>
                         </Flex>
-                        <Flex column margin="32px 16px 16px">
+                        <Flex column margin="16px">
                             <Button
                                 tertiary
                                 fullWidth
@@ -143,8 +145,10 @@ const LoginPage = () => {
     } else if (forgotPassword) {
         return (
             <Background>
-                <Flex>
-                    <Card width='489px'>
+                <Flex
+                    width='100%'
+                >
+                    <Card login width='489px'>
                         <Flex width='100%'>
                             <Logo src='/images/Logo.png' alt='Logo' />
                         </Flex>
@@ -164,7 +168,7 @@ const LoginPage = () => {
                                 assistentText='Você receberá neste e-mail um link para cadastrar uma nova senha de acesso.'
                             />
                         </Flex>
-                        <Flex column margin="32px 16px 16px">
+                        <Flex column margin="16px">
                             <Button tertiary fullWidth>
                                 Não possuo cadastro
                             </Button>
@@ -184,8 +188,11 @@ const LoginPage = () => {
     } else {
         return (
             <Background>
-                <Flex>
-                    <Card width='489px'>
+                <Flex
+                    width='100%'
+                
+                >
+                    <Card login width='489px'>
                         <Flex width='100%'>
                         <Logo src="/images/Logo.png" alt="Logo" />
     
@@ -237,7 +244,7 @@ const LoginPage = () => {
                                 Esqueci minha senha
                 </Button>
                         </Flex>
-                        <Flex column margin="32px 16px 16px">
+                        <Flex column margin="16px">
                             <Button tertiary fullWidth>
                                 Não possuo cadastro
                 </Button>
