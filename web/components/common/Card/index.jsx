@@ -1,9 +1,9 @@
 import { CardContainer } from "./styles"
 
 
-const Card = ({ children, width }) => {
+const Card = ({ children, width, login }) => {
     return (
-        <CardContainer width={width}>
+        <CardContainer width={width} login={login}>
             { children }
         </CardContainer>
     )
