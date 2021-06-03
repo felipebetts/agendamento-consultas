@@ -61,7 +61,7 @@ const theme = {
   },
   boxShadow: {
     primary: '0px 2px 4px rgba(0, 0, 0, 0.16)',
-    top: '4px 2px 4px 2px rgba(0, 0, 0, 0.16)',
+    top: '4px 0px 4px 2px rgba(0, 0, 0, 0.16)',
     bottom: '0px 2px 4px rgba(0, 0, 0, 0.16)',
   },
 }

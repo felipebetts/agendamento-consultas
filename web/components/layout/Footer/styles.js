@@ -6,7 +6,7 @@ export const FooterContainer = styled.footer`
     width: 100%;
     // height: 70px;
 
-    padding: 0 1rem;
+    padding: 1rem;
    
     // background: ${({ theme }) => theme.colors.background.primary };
 
@@ -23,7 +23,7 @@ export const FooterLogo = styled.img`
 
     // height: 60px;
     width: 130px;
-    margin: 0 0 30px ;
+    // margin: 15px;
 `
 
 export const FooterItem = styled.p`

@@ -1,14 +1,13 @@
-import { FooterContainer, FooterItem, FooterLogo, FooterShadow } from "./styles"
+import { FooterContainer, FooterItem, FooterLogo } from "./styles"
 import { Flex } from '../../common/containers'
 
 
 const Footer = () => {
     return (
-        <FooterShadow>
 
         <FooterContainer>
             <FooterLogo src='/images/Logo.png' />
-            <Flex
+            {/* <Flex
                 width='100%'
                 justifyContent='space-evenly'
             >
@@ -42,9 +41,8 @@ const Footer = () => {
                     <FooterItem>top</FooterItem>
                     <FooterItem>top</FooterItem>
                 </Flex>
-            </Flex>
+            </Flex> */}
         </FooterContainer>
-                        </FooterShadow>
     )
 }
 
