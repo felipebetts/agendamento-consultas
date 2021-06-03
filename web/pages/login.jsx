@@ -6,7 +6,7 @@ import Button from "../components/common/Button";
 
 import { User, EyeClosed, Eye, CheckCircle } from "phosphor-react";
 import { useContext, useEffect, useState } from "react";
-import { Title3, Par, Title3ag } from "../components/common/text";
+import { Title3 } from "../components/common/text";
 import { api } from "../services/apiClient";
 // import { localStorageUserKey } from "../utils/constants";
 // import { UserContext } from "../contexts/UserContext";
@@ -187,7 +187,7 @@ const LoginPage = () => {
                 <Flex>
                     <Card width='489px'>
                         <Flex width='100%'>
-                        <Logo src="/images/logo.png" alt="Logo" />
+                        <Logo src="/images/Logo.png" alt="Logo" />
     
                         </Flex>
                         <Flex padding="0 16px 16px" column alignItems="flex-start">
