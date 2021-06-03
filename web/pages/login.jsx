@@ -1,12 +1,12 @@
 import Card from "../components/common/Card";
-import { Flex } from "../components/common/Containers";
+import { Flex } from "../components/common/containers";
 import { Background, CheckIconContainer, Logo } from "../components/specific/Login/styles";
 import Input from "../components/form/Input";
 import Button from "../components/common/Button";
 
 import { User, EyeClosed, Eye, CheckCircle } from "phosphor-react";
 import { useContext, useEffect, useState } from "react";
-import { H3, Parag } from "../components/common/Text";
+import { H3, Parag } from "../components/common/text";
 import { api } from "../services/apiClient";
 // import { localStorageUserKey } from "../utils/constants";
 // import { UserContext } from "../contexts/UserContext";

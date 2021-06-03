@@ -1,4 +1,4 @@
-import { Box } from "../../common/Containers"
+import { Box } from "../../common/containers"
 import { AssistentP, SelectContainer, StyledSelect } from "./styles"
 
 

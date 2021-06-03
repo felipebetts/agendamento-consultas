@@ -33,12 +33,17 @@ const theme = {
       blue: '#5150E9',
       purple: '#5823E3',
       dark: '#0F0029',
+      orange: 'rgba(192, 85, 24, 0.849)',
     },
     text: {
       neutral600: '#333A46',
       neutral400: '#7E8AA4',
       neutral200: '#C5CEE0',
-      white: '#FFFFFF'
+      white: '#FFFFFF',
+      orange: 'rgba(192, 85, 24, 0.849)',
+    },
+    background: {
+      primary: '#eee',
     },
     status: {
       destructive: '#E13600',
@@ -54,14 +59,18 @@ const theme = {
       disabled: '#E4E9F2'
     }
   },
-  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.16)',
+  boxShadow: {
+    primary: '0px 2px 4px rgba(0, 0, 0, 0.16)',
+    top: '4px 2px 4px 2px rgba(0, 0, 0, 0.16)',
+    bottom: '0px 2px 4px rgba(0, 0, 0, 0.16)',
+  },
 }
 
 export default function App({ Component, pageProps }) {
   return (
     <>
         <Head>
-          <title>PalmDoctor</title>
+          <title>Nawi Tarot</title>
         </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
