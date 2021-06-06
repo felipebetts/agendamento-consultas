@@ -32,7 +32,7 @@ const theme = {
       ocean: '#03BAFF',
       blue: '#5150E9',
       // purple: '#5823E3',
-      purple: '#522172',
+      purple: '#493b61',
       dark: '#0F0029',
       orange: 'rgba(192, 85, 24, 0.849)',
     },
@@ -57,7 +57,7 @@ const theme = {
     },
     button: {
       // primary: '#5823E3', 
-      primary: '#522172', 
+      primary: '#493b61', 
       disabled: '#E4E9F2'
     }
   },
