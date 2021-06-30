@@ -1,13 +1,16 @@
 import { getCustomRepository, Repository } from "typeorm";
 import { User } from "../entities/User";
 import { UsersRepository } from "../repositories/UsersRepository";
-import bcrypt from 'bcryptjs'
+import bcrypt, { compare } from 'bcryptjs'
+import { sign } from "jsonwebtoken";
 
 interface ICreateUser {
     email: string,
     password: string,
     admin?: boolean
 }
+
+
 
 export class UserService {
     private usersRepository: Repository<User>
