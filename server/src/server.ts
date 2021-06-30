@@ -7,12 +7,15 @@ import 'express-async-errors'
 
 import './database'
 import { treatErrors } from './middlewares/treatErrors'
+import cors from 'cors'
 
 dotenv.config()
 
 const app = express()
 
 app.use(express.json())
+
+app.use(cors())
 
 const routes = require('./routes')
 routes(app)

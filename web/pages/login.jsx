@@ -11,6 +11,7 @@ import { api } from "../services/apiClient";
 // import { localStorageUserKey } from "../utils/constants";
 // import { UserContext } from "../contexts/UserContext";
 import { useRouter } from "next/router";
+import { login } from "../services/authClient";
 
 const LoginPage = () => {
 
@@ -65,6 +66,18 @@ const LoginPage = () => {
 
 
     const handleLogin = () => {
+
+        const loginData = {
+            email: username,
+            password
+        }
+
+        login(loginData)
+            .then(res => {
+                if (res.status === 200) {
+                    router.push('/')
+                }
+            })
         // const reqData = {
         //     grant_type: "password",
         //     client_id: 2,
@@ -73,7 +86,6 @@ const LoginPage = () => {
         //     password: password,
         //     scope: ""
         // }
-
 
         // api('post', '/oauth/token', reqData)
         //     .then(res => {

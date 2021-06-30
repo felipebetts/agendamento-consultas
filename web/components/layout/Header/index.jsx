@@ -5,11 +5,20 @@ import Button from '../../common/Button'
 import { User, List } from 'phosphor-react'
 import { useRouter } from "next/router"
 import Link from 'next/link'
+import { useContext, useEffect } from "react"
+import { UserContext } from "../../../contexts/UserContext"
+import Topbar from "../Topbar"
 
 
 const Header = () => {
 
     const router = useRouter()
+
+    const { user } = useContext(UserContext)
+
+    useEffect(() => {
+        console.log('user: ', user)
+    }, [user])
 
     return (
         <HeaderContainer>
@@ -21,7 +30,7 @@ const Header = () => {
             </HeaderLogoContainer>
             <HeaderContentContainer>
                 <div className='big'>
-                    <Box margin='0 10px'>
+                    {/* <Box margin='0 10px'>
                         <Link href='/'>
                             Minha Área
                         </Link>
@@ -35,7 +44,8 @@ const Header = () => {
                         <Link href='/'>
                             Minha Área
                         </Link>
-                    </Box>
+                    </Box> */}
+                    <Topbar />
                 </div>
                 <div className='small'>
                     <Button

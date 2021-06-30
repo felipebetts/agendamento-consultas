@@ -1,5 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
+import { UserContextProvider } from '../contexts/UserContext'
 
 const GlobalStyle = createGlobalStyle`
   
@@ -59,7 +60,10 @@ const theme = {
       // primary: '#5823E3', 
       primary: '#493b61', 
       disabled: '#E4E9F2'
-    }
+    },
+    grayscale: {
+      divider: '#dfe0eb',
+    },
   },
   boxShadow: {
     primary: '0px 2px 4px rgba(0, 0, 0, 0.16)',
@@ -75,9 +79,11 @@ export default function App({ Component, pageProps }) {
           <title>Nawi Tarot</title>
         </Head>
         <GlobalStyle />
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <UserContextProvider>
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </UserContextProvider>
     </>
   )
 }

@@ -20,12 +20,12 @@ export function ensureAuth(req: Request, res: Response, next: NextFunction) {
         req.user_id = sub as string
         return next()
     } catch (err) {
-        console.error(err.expiredAt)
-        if (err.expiredAt) {
-            return res.status(401).send({
-                error: 'Atualize o access_token usando o refresh_token'
-            })
-        }
+        // console.error(err.expiredAt)
+        // if (err.expiredAt) {
+        //     return res.status(401).send({
+        //         error: 'Atualize o access_token usando o refresh_token'
+        //     })
+        // }
         return res.status(401).end()
     }
 
