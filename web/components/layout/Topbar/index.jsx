@@ -26,7 +26,7 @@ const Topbar = () => {
         const didLogout = logout()
         if (didLogout) {
             // alert.success(<AlertMessageTemplate>Logout realizado com sucesso!</AlertMessageTemplate>)
-            router.push('/login')
+            router.reload()
         } else {
             // alert.error(<AlertMessageTemplate>Não foi possível realizar o logout</AlertMessageTemplate>)
         }
@@ -57,7 +57,8 @@ const Topbar = () => {
                     </Body2>
                 </Box>
                 <ProfilePicCircle>
-                    <img src="https://github.com/felipebetts.png" alt="" />
+                    <User size={24} weight='thin' />
+                    {/* <img src="https://github.com/felipebetts.png" alt="" /> */}
                 </ProfilePicCircle>
             </Flex>
         )

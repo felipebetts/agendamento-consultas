@@ -22,7 +22,9 @@ const Header = () => {
 
     return (
         <HeaderContainer>
-            <HeaderLogoContainer>
+            <HeaderLogoContainer
+                onClick={() => router.push('/')}
+            >
                 <HeaderLogo src='/images/Logo.png' />
                 <Title1 textColor='orange'>
                     Nawi Tarot

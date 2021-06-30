@@ -31,6 +31,8 @@ display: flex;
 align-items: center;
 justify-content: center;
 
+cursor: pointer;
+
 @media(max-width: 576px) {
     h1 {
         display: none;
