@@ -152,12 +152,17 @@ const LoginPage = () => {
                         <Flex width='100%'>
                             <Logo src='/images/Logo.png' alt='Logo' />
                         </Flex>
-                        <Flex padding="0 16px 16px" column alignItems="flex-start" textAlign='left'>
-                            <Flex width='100%'>
+                        <Flex
+                            margin='30px 0 0 0'
+                            padding="0 16px 16px"
+                            column
+                            alignItems="flex-start"
+                            textAlign='left'>
+                            {/* <Flex width='100%'>
                                 <Title3 fontSize='24px' fontWeight='400'>
                                     Recuperação de acesso
                                 </Title3>
-                            </Flex>
+                            </Flex> */}
                             <Input
                                 id="username"
                                 value={username}
@@ -169,8 +174,12 @@ const LoginPage = () => {
                             />
                         </Flex>
                         <Flex column margin="16px">
-                            <Button tertiary fullWidth>
-                                Não possuo cadastro
+                            <Button
+                                tertiary
+                                fullWidth
+                                onClick={() => setForgotPassword(false)}
+                            >
+                                Voltar
                             </Button>
                             <Button
                                 fullWidth

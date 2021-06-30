@@ -34,14 +34,14 @@ const theme = {
       // purple: '#5823E3',
       purple: '#493b61',
       dark: '#0F0029',
-      orange: 'rgba(192, 85, 24, 0.849)',
+      orange: '#b36e4e',
     },
     text: {
       neutral600: '#333A46',
       neutral400: '#7E8AA4',
       neutral200: '#C5CEE0',
       white: '#FFFFFF',
-      orange: 'rgba(192, 85, 24, 0.849)',
+      orange: '#b36e4e',
     },
     background: {
       primary: '#eee',
