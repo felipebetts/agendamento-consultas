@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Application, Router } from "express";
 import { UserController } from "../controllers/UserController";
 
 
@@ -13,4 +13,4 @@ router.delete('/:id', userController.delete)
 
 // export { router }
 
-module.exports = app => app.use('/users', router)
+module.exports = (app: Application) => app.use('/users', router)

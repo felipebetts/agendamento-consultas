@@ -25,16 +25,16 @@ export class AuthService {
         })
 
         if (!user) {
-            throw new Error('Email incorretos')
-            // throw new Error('Email e/ou senha incorretos')
+            // throw new Error('Email incorretos')
+            throw new Error('Email e/ou senha incorretos')
         }
 
         // verificar se a senha está correta
         const passwordsMatch = await compare(password, user.password)
 
         if (!passwordsMatch) {
-            throw new Error('senha incorretos')
-            // throw new Error('Email e/ou senha incorretos')
+            // throw new Error('senha incorretos')
+            throw new Error('Email e/ou senha incorretos')
         }
 
         // se correta, vamos gerar o token
