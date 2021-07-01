@@ -8,13 +8,17 @@ export const HeaderContainer = styled.header`
 
     padding: 0 1rem;
    
-    // background: ${({ theme }) => theme.colors.background.primary };
+    background: ${({ theme }) => theme.colors.background.primary };
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     box-shadow: ${({ theme }) => theme.boxShadow.bottom };
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 
 `
 

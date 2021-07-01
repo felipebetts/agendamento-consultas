@@ -78,6 +78,16 @@ const LoginPage = () => {
                     router.push('/')
                 }
             })
+            .catch(err => {
+                // console.log({ err })
+                setLoginError(true)
+                setLoginErrorMessage('Usuário ou senha incorretos')
+            })
+        // .catch(err => {
+        //     console.log('err: ', err)
+        //     console.log('{...err}: ', {...err})
+        // })
+
         // const reqData = {
         //     grant_type: "password",
         //     client_id: 2,
@@ -117,7 +127,7 @@ const LoginPage = () => {
             <Background>
                 <Flex
                     width='100%'
-                    >
+                >
                     <Card login width='489px'>
                         <Flex padding="0 16px 16px" column>
                             <CheckIconContainer>
@@ -125,10 +135,10 @@ const LoginPage = () => {
                             </CheckIconContainer>
                             <Title3 fontSize='24px' fontWeight='400'>
                                 Confira sua caixa de entrada!
-                </Title3>
+                            </Title3>
                             <Parag margin='16px 36px 0'>
                                 Enviamos um link para cadastramento de uma nova senha no e-mail informado.
-                </Parag>
+                            </Parag>
                         </Flex>
                         <Flex column margin="16px">
                             <Button
@@ -140,7 +150,7 @@ const LoginPage = () => {
                                 }}
                             >
                                 Tentar outro e-mail
-              </Button>
+                            </Button>
                             <Button
                                 fullWidth
                                 onClick={() => {
@@ -148,7 +158,7 @@ const LoginPage = () => {
                                 }}
                             >
                                 Ainda não recebi
-              </Button>
+                            </Button>
                         </Flex>
                     </Card>
                 </Flex>
@@ -211,12 +221,12 @@ const LoginPage = () => {
             <Background>
                 <Flex
                     width='100%'
-                
+
                 >
                     <Card login width='489px'>
                         <Flex width='100%'>
-                        <Logo src="/images/Logo.png" alt="Logo" />
-    
+                            <Logo src="/images/Logo.png" alt="Logo" />
+
                         </Flex>
                         <Flex padding="0 16px 16px" column alignItems="flex-start">
                             <Input
@@ -263,18 +273,18 @@ const LoginPage = () => {
                                 onClick={() => setForgotPassword(true)}
                             >
                                 Esqueci minha senha
-                </Button>
+                            </Button>
                         </Flex>
                         <Flex column margin="16px">
                             <Button tertiary fullWidth>
                                 Não possuo cadastro
-                </Button>
+                            </Button>
                             <Button
                                 fullWidth
                                 onClick={() => handleLogin()}
                             >
                                 Acessar
-                </Button>
+                            </Button>
                         </Flex>
                     </Card>
                 </Flex>

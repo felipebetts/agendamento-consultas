@@ -45,7 +45,7 @@ const theme = {
       orange: '#b36e4e',
     },
     background: {
-      primary: '#eee',
+      primary: '#fff',
     },
     status: {
       destructive: '#E13600',
