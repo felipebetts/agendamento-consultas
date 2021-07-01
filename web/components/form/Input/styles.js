@@ -108,7 +108,7 @@ export const AssistentP = styled.p`
 
     max-width: 85%;
 
-    // color: ${({ theme }) => theme.colors.status.destructive };
+    color: ${({ theme }) => theme.colors.primary.purple };
 
     ${(props) => props.error ? `
         color: ${props.theme.colors.status.destructive};
