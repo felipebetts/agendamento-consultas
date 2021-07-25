@@ -11,4 +11,6 @@ router.get('/', appointmentHourController.getAllAppointmentHours)
 router.post('/', ensureAuth, ensureAdmin, appointmentHourController.create)
 router.delete('/:id', appointmentHourController.delete)
 
+// router.put('/book', appointmentHourController.toggleIsBooked)
+
 module.exports = (app: Application) => app.use('/appointment_hours', router)

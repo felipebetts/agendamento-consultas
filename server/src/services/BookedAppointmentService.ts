@@ -35,6 +35,15 @@ export class BookedAppointmentService {
             throw new Error("Appointment hour not available");
         }
 
+        const toggledAppointmentHour = {
+            ...appointmentHourExists,
+            is_booked: true
+        }
+
+        const updatedAppointmentHour = await appointmentHoursRepository.save({...toggledAppointmentHour})
+
+        console.log('updatedAppointmentHour: ', updatedAppointmentHour)
+
         // check if hour already booked:
         const bookedAppointmentAlreadyExists = await this.bookedAppointmentsRepository.findOne({
             appointment_id
@@ -61,8 +70,25 @@ export class BookedAppointmentService {
         if (!bookedAppointmentExists) {
             throw new Error("Booked Appointment doesn't exists")
         }
+        // check if appointmentHour exists:
+        const appointmentHoursRepository = getCustomRepository(AppointmentHoursRepository)
+        const appointmentHourExists = await appointmentHoursRepository.findOne(bookedAppointmentExists.appointment_id)
 
+        if (!appointmentHourExists) {
+            throw new Error("Appointment hour not available");
+        }
+
+        const toggledAppointmentHour = {
+            ...appointmentHourExists,
+            is_booked: false
+        }
+
+        const updatedAppointmentHour = await appointmentHoursRepository.save({...toggledAppointmentHour})
+
+        console.log('updatedAppointmentHour: ', updatedAppointmentHour)
+        
         await this.bookedAppointmentsRepository.delete(id)
+
 
         return true
     }
