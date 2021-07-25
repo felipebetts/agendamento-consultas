@@ -8,8 +8,8 @@ export const HeaderContainer = styled.header`
 
     padding: 0 1rem;
    
-    ${(props) => props.open ? '' : `background: ${props.theme.colors.background.primary};`}
-    // background: ${({ theme }) => theme.colors.background.primary };
+    background: ${({ theme }) => theme.colors.background.primary };
+    ${(props) => props.open ? 'background: none' : ''}
 
     display: flex;
     align-items: center;

@@ -8,9 +8,9 @@ export const StyledNav = styled.nav`
 
     // box-shadow: ${({ theme }) => theme.boxShadow.bottom };
 
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    // position: -webkit-sticky; /* Safari */
+    // position: sticky;
+    // top: 0;
 
     display: flex;
     align-items: center;
