@@ -1,48 +1,32 @@
-import { FooterContainer, FooterItem, FooterLogo } from "./styles"
-import { Flex } from '../../common/containers'
+import { Col, ColItem, Cols, FooterContainer, FooterItem, FooterLogo } from "./styles"
 
 
 const Footer = () => {
     return (
-
-        <FooterContainer>
+        <>
             <FooterLogo src='/images/Logo.png' />
-            {/* <Flex
-                width='100%'
-                justifyContent='space-evenly'
-            >
-                <Flex
-                    column
-                    width='15%'
-                    textAlign='left'
-                    alignItems='flex-start'
-                    >
-                    <FooterItem>topissimo</FooterItem>
-                    <FooterItem>top</FooterItem>
-                    <FooterItem>top</FooterItem>
-                </Flex>
-                <Flex
-                    column
-                    width='15%'
-                    textAlign='left'    
-                    alignItems='flex-start'
-                    >
-                    <FooterItem>top</FooterItem>
-                    <FooterItem>top</FooterItem>
-                    <FooterItem>top</FooterItem>
-                </Flex>
-                <Flex
-                    column
-                    width='15%'
-                    textAlign='left'    
-                    alignItems='flex-start'
-                    >
-                    <FooterItem>top</FooterItem>
-                    <FooterItem>top</FooterItem>
-                    <FooterItem>top</FooterItem>
-                </Flex>
-            </Flex> */}
-        </FooterContainer>
+            <FooterContainer>
+                <Cols>
+                    <Col>
+                    Copyright &copy; 2021
+                    <br/>
+                    <br/>
+                    <i>Nawi Tarot</i>
+                    </Col>
+                    <Col>
+                        <ColItem>Curso Jardinagem Fácil</ColItem>
+                        <ColItem>eBook</ColItem>
+                        <ColItem>Produto</ColItem>
+                    </Col>
+                    <Col>
+                        <ColItem>Curso Jardinagem Fácil</ColItem>
+                        <ColItem>eBook</ColItem>
+                        <ColItem>Produto</ColItem>
+                        <ColItem>eBook</ColItem>
+                    </Col>
+                </Cols>
+            </FooterContainer>
+        </>
     )
 }
 

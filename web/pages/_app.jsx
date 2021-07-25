@@ -73,7 +73,8 @@ const theme = {
   },
   breakpoints: {
     xs: '476px',
-    sm: '576px'
+    sm: '576px',
+    md: '872px',
   }
 }
 
