@@ -9,14 +9,15 @@ export const FooterContainer = styled.footer`
     padding: 1rem;
    
     // background: ${({ theme }) => theme.colors.background.primary };
+    
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    box-shadow: ${({ theme }) => theme.boxShadow.top };
-
+    // box-shadow: ${({ theme }) => theme.boxShadow.top };
+    border-top: solid 1px ${({ theme }) => theme.colors.text.neutral200 };
 `
 
 export const FooterLogo = styled.img`

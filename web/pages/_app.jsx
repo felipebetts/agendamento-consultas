@@ -1,6 +1,7 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import { UserContextProvider } from '../contexts/UserContext'
+import { DrawerContextProvider } from '../contexts/DrawerContext'
 
 const GlobalStyle = createGlobalStyle`
   
@@ -70,6 +71,10 @@ const theme = {
     top: '4px 0px 4px 2px rgba(0, 0, 0, 0.16)',
     bottom: '0px 2px 4px rgba(0, 0, 0, 0.16)',
   },
+  breakpoints: {
+    xs: '476px',
+    sm: '576px'
+  }
 }
 
 export default function App({ Component, pageProps }) {
@@ -80,9 +85,11 @@ export default function App({ Component, pageProps }) {
         </Head>
         <GlobalStyle />
         <UserContextProvider>
-          <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
-          </ThemeProvider>
+          <DrawerContextProvider>
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </DrawerContextProvider>
         </UserContextProvider>
     </>
   )
