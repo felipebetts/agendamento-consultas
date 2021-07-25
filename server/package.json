@@ -8,11 +8,13 @@
     "watch": "tsc -w",
     "dev": "ts-node-dev src/server.ts",
     "dev2": "nodemon dist/server.js",
+    "start": "",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
   },
   "keywords": [
     "consultas",
-    "agendamento"
+    "agendamento",
+    "appointment"
   ],
   "author": "Felipe Betts",
   "license": "ISC",
