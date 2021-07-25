@@ -10,9 +10,11 @@ const CalendarPage = () => {
     return (
         <PageWrapper>
             <Flex
-                width='90%'
-                margin='5%'
+                width='100%'
+                // margin='5%'
+                padding='5%'
                 column
+                // wrap='wrap'
                 // alignItems='flex-start'
             >
                 <AppointmentHourCard />

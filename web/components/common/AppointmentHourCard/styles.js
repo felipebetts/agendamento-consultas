@@ -7,6 +7,7 @@ export const AppointmentHourCardContainer = styled.div`
 
     width: 100%;
     border-radius: 8px;
+    max-width: 500px;
 
     box-shadow: ${({ theme }) => theme.boxShadow.primary };
 
@@ -14,6 +15,8 @@ export const AppointmentHourCardContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    text-align: left;
 `
 
 export const AppointmentHourButton = styled.button`

@@ -11,6 +11,7 @@ export const Flex = styled.div`
 
 
     ${(props) => props.column ? 'flex-direction: column;' : ''}
+    ${(props) => props.wrap ? `flex-wrap: ${props.wrap};` : ''}
     
     ${(props) => props.width ? `width: ${props.width};` : ''}
 
