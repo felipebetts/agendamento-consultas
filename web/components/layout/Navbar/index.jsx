@@ -14,17 +14,17 @@ const Navbar = () => {
                 Início
             </NavItem>
             <NavItem
-                onClick={() => router.push('/horarios')}
+                onClick={() => router.push('/agendar')}
             >
                 Agendar
             </NavItem>
             <NavItem
-                onClick={() => router.push('/horarios')}
+                onClick={() => router.push('/agendar')}
             >
                 Curiosidades
             </NavItem>
             <NavItem
-                onClick={() => router.push('/horarios')}
+                onClick={() => router.push('/agendar')}
             >
                 Experiências
             </NavItem>
