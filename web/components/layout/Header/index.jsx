@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { useContext, useEffect } from "react"
 import { UserContext } from "../../../contexts/UserContext"
 import Topbar from "../Topbar"
+import { DrawerContext } from "../../../contexts/DrawerContext"
 
 
 const Header = () => {
@@ -15,13 +16,14 @@ const Header = () => {
     const router = useRouter()
 
     const { user } = useContext(UserContext)
+    const { open, setOpen } = useContext(DrawerContext)
 
     useEffect(() => {
         console.log('user: ', user)
     }, [user])
 
     return (
-        <HeaderContainer>
+        <HeaderContainer open={open}>
             <HeaderLogoContainer
                 onClick={() => router.push('/')}
             >
@@ -60,6 +62,7 @@ const Header = () => {
                     <Button
                         tertiary
                         margin='0 10px'
+                        onClick={() => setOpen(!open)}
                     >
                         <List size={24} />
                     </Button>

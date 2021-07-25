@@ -9,12 +9,14 @@ export const HeaderContainer = styled.header`
     padding: 0 1rem;
    
     background: ${({ theme }) => theme.colors.background.primary };
+    ${(props) => props.open ? 'background: none' : ''}
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    box-shadow: ${({ theme }) => theme.boxShadow.bottom };
+    border-bottom: solid 1px ${({ theme }) => theme.colors.text.neutral200 };
+    // box-shadow: ${({ theme }) => theme.boxShadow.bottom };
 
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -37,7 +39,7 @@ justify-content: center;
 
 cursor: pointer;
 
-@media(max-width: 576px) {
+@media(max-width: ${({ theme }) => theme.breakpoints.sm }) {
     h1 {
         display: none;
     }
