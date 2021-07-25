@@ -2,10 +2,13 @@ import { useEffect, useState } from "react"
 import { Box, Flex } from "../containers"
 import { AppointmentHourCardContainer, AppointmentHourButton } from "./styles"
 import { months, weekDays } from '../../../utils/dates'
+import { useRouter } from "next/router"
 
 const AppointmentHourCard = ({
     data
 }) => {
+
+    const router = useRouter()
 
     const [weekDay, setWeekDay] = useState('Loading')
     const [month, setMonth] = useState('Loading')
@@ -68,9 +71,17 @@ const AppointmentHourCard = ({
                 wrap='wrap'
                 justifyContent='flex-start'
             >
-                { startingTimes && startingTimes.map((e, i) => (
-                    <AppointmentHourButton>
-                        {e}
+                { data && startingTimes && data.map((e, i) => (
+                    <AppointmentHourButton
+                        onClick={() => {
+                            console.log('e: ', e)
+                            router.push({
+                                pathname: '/agendar/[id]',
+                                query: { id: e.id }
+                            })
+                        }} 
+                    >
+                        {startingTimes[i]}
                     </AppointmentHourButton>
                 ))}
             </Flex>

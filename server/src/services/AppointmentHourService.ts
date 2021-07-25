@@ -67,6 +67,12 @@ export class AppointmentHourService {
         return appointmentHours
     }
 
+    async getById(id: string) {
+        const appointmentHour = this.appointmentHoursRepository.findOne(id)
+
+        return appointmentHour
+    }
+
     // async toggleIsBooked(id: string) {
     //     const appointmentHourExists = await this.appointmentHoursRepository.findOne(id)
 

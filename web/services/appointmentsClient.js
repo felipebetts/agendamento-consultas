@@ -17,4 +17,12 @@ export const getAppointments = () => {
             console.log('res: ', res)
             return res
         })
+    }
+    
+export const getAppointmentById = (id) => {
+    return api('get', `/appointment_hours/${id}`)
+        .then(res => {
+            console.log('res: ', res)
+            return res
+        })
 }

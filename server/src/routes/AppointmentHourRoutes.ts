@@ -8,6 +8,7 @@ const router = Router()
 const appointmentHourController = new AppointmentHourController()
 
 router.get('/', appointmentHourController.getAllAppointmentHours)
+router.get('/:id', appointmentHourController.getById)
 router.post('/', ensureAuth, ensureAdmin, appointmentHourController.create)
 router.delete('/:id', appointmentHourController.delete)
 

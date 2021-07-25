@@ -1,8 +1,8 @@
-import PageWrapper from "../templates/PageWrapper"
-import { Flex } from "../components/common/containers"
+import PageWrapper from "../../templates/PageWrapper"
+import { Flex } from "../../components/common/containers"
 import { useEffect, useState } from "react"
-import AppointmentHourCard from "../components/common/AppointmentHourCard"
-import { getAppointments } from "../services/appointmentsClient"
+import AppointmentHourCard from "../../components/common/AppointmentHourCard"
+import { getAppointments } from "../../services/appointmentsClient"
 
 const CalendarPage = () => {
 

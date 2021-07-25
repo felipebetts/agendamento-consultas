@@ -53,6 +53,16 @@ export class AppointmentHourController {
         }
     }
     
+    async getById(req: Request, res: Response) {
+
+        const { id } = req.params
+
+        const appointmentHourService = new AppointmentHourService()
+        
+        const appointment = await appointmentHourService.getById(id)
+
+        return res.json(appointment)
+    }
     // async toggleIsBooked(req: Request, res: Response) {
     //     const { id } = req.body
 
