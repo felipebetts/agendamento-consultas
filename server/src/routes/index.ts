@@ -8,6 +8,7 @@ module.exports = (app: Application) => {
     require('./UserRoutes')(app)
     require('./AppointmentHourRoutes')(app)
     require('./AuthRoutes')(app)
+    require('./BookedAppointmentRoutes')(app)
 }
 
 // const router = Router()

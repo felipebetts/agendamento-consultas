@@ -46,10 +46,22 @@ export class AppointmentHourController {
             const appointmentHourService = new AppointmentHourService()
             
             const appointmentHours = await appointmentHourService.getAllAppointmentHours()
-
+            
             return res.json(appointmentHours)
         } catch (err) {
             return res.status(500).json(err)
         }
     }
+    
+    // async toggleIsBooked(req: Request, res: Response) {
+    //     const { id } = req.body
+
+    //     const appointmentHourService = new AppointmentHourService()
+        
+    //     const updatedAppointmentHour = await appointmentHourService.toggleIsBooked(id)
+
+    //     console.log('updatedAppointmentHour: ', updatedAppointmentHour)
+
+    //     return res.json(updatedAppointmentHour)
+    // }
 }

@@ -66,4 +66,21 @@ export class AppointmentHourService {
 
         return appointmentHours
     }
+
+    // async toggleIsBooked(id: string) {
+    //     const appointmentHourExists = await this.appointmentHoursRepository.findOne(id)
+
+    //     if (!appointmentHourExists) {
+    //         throw new Error("Horário de consulta informado não existe")
+    //     }
+    
+    //     const toggledAppointmentHour = {
+    //         ...appointmentHourExists,
+    //         is_booked: !appointmentHourExists.is_booked
+    //     }
+
+    //     const updatedAppointmentHour = await this.appointmentHoursRepository.save({...toggledAppointmentHour})
+
+    //     return updatedAppointmentHour
+    // }
 }

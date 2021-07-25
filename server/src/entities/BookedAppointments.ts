@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from 'uuid'
 
 
-@Entity('users')
+@Entity('booked_appointments')
 export class BookedAppointments {
 
     @PrimaryColumn()
